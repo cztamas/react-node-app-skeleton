@@ -11,7 +11,7 @@ npm install
 ```
 npm start
 ```
-Compiles client with hot reloading and starts server with automatic restart on code change.
+Compiles client with hot reloading and starts server with automatic restart on code change. Also opens the app in your browser.
 
 ### Run tests (and linter)
 ```
