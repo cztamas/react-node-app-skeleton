@@ -8,7 +8,9 @@
     "start-server": "node src/index.js",
     "start-dev": "onchange -i -k 'src/**/*.js' -- npm run start-server",
     "start": "npm run start-dev",
-    "test": "npm run lint"
+    "test:once": "jasmine --config=jasmine.json",
+    "test:watch": "onchange -i -k 'src/**/*.js' -- npm run test:once",
+    "test": "npm run lint && npm run test:once"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,9 @@
   },
   "devDependencies": {
     "eslint": "7.25.0",
-    "onchange": "7.1.0"
+    "eslint-plugin-jasmine": "4.1.2",
+    "jasmine": "3.7.0",
+    "onchange": "7.1.0",
+    "supertest": "6.1.3"
   }
 }

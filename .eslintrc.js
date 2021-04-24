@@ -1,10 +1,12 @@
 'use strict';
 
 module.exports = {
+  plugins: ['jasmine'],
   env: {
     browser: true,
     commonjs: true,
     es6: true,
+    jasmine: true,
     node: true
   },
   extends: [
@@ -22,6 +24,7 @@ module.exports = {
     indent: ['warn', 2, {
       SwitchCase: 1
     }],
+    'jasmine/no-focused-tests': 'error',
     'keyword-spacing': ['warn'],
     'no-async-promise-executor': 'off',
     'no-console': 'off',
