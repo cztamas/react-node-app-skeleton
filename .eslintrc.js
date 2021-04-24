@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  plugins: ['jasmine'],
+  plugins: ['jasmine', 'react'],
   env: {
     browser: true,
     commonjs: true,
@@ -10,7 +10,8 @@ module.exports = {
     node: true
   },
   extends: [
-    'eslint:recommended'
+    'eslint:recommended',
+    'plugin:react/recommended'
   ],
   globals: {
     expectAsync: 'readonly'
@@ -35,5 +36,10 @@ module.exports = {
     semi: ['warn', 'always'],
     'space-before-blocks': 'warn',
     strict: 'warn'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };
