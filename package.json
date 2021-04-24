@@ -4,10 +4,11 @@
   "description": "WIP",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint 'src/**/*.js'",
     "start-server": "node src/index.js",
     "start-dev": "onchange -i -k 'src/**/*.js' -- npm run start-server",
     "start": "npm run start-dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "express": "4.17.1"
   },
   "devDependencies": {
+    "eslint": "7.25.0",
     "onchange": "7.1.0"
   }
 }
