@@ -1,30 +1,18 @@
 'use strict';
 
+const path = require('path');
 const express = require('express');
+const { resourceBaseUrl } = require('./config');
+
 const app = express();
+app.set('views', path.resolve(__dirname, 'views'));
 
 app.get('/healthcheck', (req, res) => {
   res.status(200).send({ success: true });
 });
 
 app.get('/', (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-        <title>React skeleton app</title>
-      </head>
-      <body>
-        <div id="app"></div>
-
-        <script src="http://localhost:7878/app.js"></script>
-      </body>
-    </html>
-  `);
+  res.render('index.ejs', { resourceBaseUrl });
 });
 
 module.exports = app;
