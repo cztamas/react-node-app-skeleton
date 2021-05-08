@@ -9,4 +9,4 @@ services:
       - .:/usr/src/app
     ports:
       - '${PORT}:${PORT}'
-    command: npm run start-server-dev
+    command: npm run watch-server
